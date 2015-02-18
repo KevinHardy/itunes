@@ -13,7 +13,7 @@
           <div class="navbar-header">
             <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music"></span> DevTunes</a>
           </div>
-          <form class="navbar-form navbar-left" role="search">
+          <form ng-submit="getSongData()" class="navbar-form navbar-left" role="search">
             <div class="form-group">
               <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
               <button class="btn btn-primary" ng-click="getSongData()"> Submit </button>
