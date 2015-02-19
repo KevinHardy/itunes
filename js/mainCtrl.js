@@ -87,5 +87,5 @@ app.controller('mainCtrl', function($scope, itunesService){
 });
 
 /*
-
+the getSongData function does all of the things on this page that is being requested.
 */

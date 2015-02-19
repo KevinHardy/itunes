@@ -19,7 +19,7 @@ app.service('itunesService', function($http, $q){
     }
 });
 
-/* here are some examples of other ways to do same code above
+/* here is an example of other ways to do same code above
 
     this.getSongs = function(artist) {
       var httpPromise = $http.jsonp('https://itunes.apple.com/search?term=' + artist + '&callback=JSON_CALLBACK')
