@@ -18,3 +18,20 @@ app.service('itunesService', function($http, $q){
     	return deferred.promise;
     }
 });
+
+/* here are some examples of other ways to do same code above
+
+    this.getSongs = function(artist) {
+      var httpPromise = $http.jsonp('https://itunes.apple.com/search?term=' + artist + '&callback=JSON_CALLBACK')
+      var ourPromise = httpPromise.then(function(response1) {
+        return $http.jsonp('apple.com/people_that_like/' + artist).then(function(response2) {
+          return {
+            originalRequestData: response1.data.results
+            secondRequestData: response2.data.results
+          }
+        })
+      })
+      return ourPromise;
+    }
+
+*/

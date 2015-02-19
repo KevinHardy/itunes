@@ -33,15 +33,15 @@ app.controller('mainCtrl', function($scope, itunesService){
     $scope.getSongData = function() {
       itunesService.getSongs($scope.artist).then(function(songs) {
         
-        //console.log(songs);
+        console.log(songs);
         $scope.songData = songs.map(function(iTunesFormattedResult) {
           return {
             AlbumArt: iTunesFormattedResult.artworkUrl100,
             Artist: iTunesFormattedResult.artistName,
-            Collection:
-            CollectionPrice:
-            Play:
-            Type: 
+            Collection: iTunesFormattedResult.collectionName,
+            CollectionPrice: iTunesFormattedResult.CollectionPrice,
+            Play: iTunesFormattedResult.previewUrl,
+            Type: iTunesFormattedResult.kind
           }
         })
 
@@ -67,16 +67,25 @@ app.controller('mainCtrl', function($scope, itunesService){
   //the iTunes API is going to give you a lot more details than ng-grid wants. Create a new array and then loop through the iTunes data pushing into your new array objects that look like the above data.
 
     //Code here
-    var gotData = [];
-    for (var i = 0, var i < songData.length; i++) {
 
-    }
+/*  one example, other way to do it is coded above
+    function massageDataFromItunes(data) {
+      var dataArr = [];
+      for (var i < songData.length; i >= 0, i--) {
+        var dataObj = {};
+        dataObj.AlbumArt = songData[i].artworkUrl100;
+        dataObj.Artist = songData[i].artistName;
+
+
+      }
+      return dataArr;
+    }*/
 
   //Once you have that final data array, you simply need to put it on the scope (or more specifically on the scope as songData). Once you do this ($scope.songData = myFinalArray) then ng-grid will see that and populate the page.
 
     //Code here
 });
 
+/*
 
-
-
+*/
